@@ -1,6 +1,7 @@
 import { Action, combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
-import dashboardReducer from 'features/dashboard/dashboardSlice';
+import authReducer from 'features/auth/authSlice';
+import youtubeReducer from 'features/home/homeSlice';
 import createSagaMiddleware from 'redux-saga';
 import { history } from 'utils';
 import counterReducer from '../features/counter/counterSlice';
@@ -9,13 +10,15 @@ import rootSaga from './rootSaga';
 const rootReducer = combineReducers({
   router: connectRouter(history),
   counter: counterReducer,
-  dashboard: dashboardReducer,
+  auth: authReducer,
+  youtube: youtubeReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware, routerMiddleware(history)),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(sagaMiddleware, routerMiddleware(history)),
 });
 
 sagaMiddleware.run(rootSaga);
