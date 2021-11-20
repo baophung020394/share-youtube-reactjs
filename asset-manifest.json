@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/youtube-share-reactjs/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/youtube-share-reactjs/static/js/main.ceb3358c.chunk.js",
+    "main.js.map": "/youtube-share-reactjs/static/js/main.ceb3358c.chunk.js.map",
+    "runtime-main.js": "/youtube-share-reactjs/static/js/runtime-main.1bb247fa.js",
+    "runtime-main.js.map": "/youtube-share-reactjs/static/js/runtime-main.1bb247fa.js.map",
+    "static/js/2.12593008.chunk.js": "/youtube-share-reactjs/static/js/2.12593008.chunk.js",
+    "static/js/2.12593008.chunk.js.map": "/youtube-share-reactjs/static/js/2.12593008.chunk.js.map",
+    "index.html": "/youtube-share-reactjs/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/youtube-share-reactjs/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.12593008.chunk.js.LICENSE.txt": "/youtube-share-reactjs/static/js/2.12593008.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1bb247fa.js",
+    "static/js/2.12593008.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.ceb3358c.chunk.js"
+  ]
+}
