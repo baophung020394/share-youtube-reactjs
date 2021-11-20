@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const axiosClient = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://share-youtube-node.herokuapp.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
