@@ -72,7 +72,7 @@ export default function Share({ initialValues, onSubmit }: ShareFormProps) {
     console.log('formValues', formValues);
     try {
       await youtubeApi.share(formValues);
-      history.push('/admin/home');
+      history.push('/');
     } catch (error) {
       console.log('Failed to share', error);
     }

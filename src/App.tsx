@@ -18,15 +18,10 @@ function App() {
         <Header />
       </Box>
       <Switch>
-        <Route exact path='/'>
-          <Redirect to='/admin/home' />
-        </Route>
-        <Route path='/admin/home'>
+        <Route path='/'>
           <AdminLayout />
         </Route>
-        <Route path='/admin/share'>
-          <Share />
-        </Route>
+       
         <Route>
           <NotFound />
         </Route>

@@ -58,13 +58,13 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
     name: {
-      color:'#000',
-      marginRight: 15
+      color: '#000',
+      marginRight: 15,
     },
     boxName: {
       display: 'flex',
-      alignItems: 'center'
-    }
+      alignItems: 'center',
+    },
   })
 );
 export interface LoginFormProps {
@@ -109,28 +109,42 @@ export function Header({ initialValues, onSubmit }: LoginFormProps) {
     dispatch(authActions.logout());
     localStorage.removeItem('user');
     localStorage.removeItem('username');
-    window.location.replace('/admin/home');
+    window.location.replace('/');
   };
 
   const handleShare = () => {
-    history.push('/admin/share');
+    history.push('/share');
   };
 
   useEffect(() => {
     if (currentUser?.error || isRegister) {
       localStorage.removeItem('token');
-      authApi.register(userProfile);
+      dispatch(
+        authActions.register({
+          username: userProfile.username,
+          password: userProfile.password,
+        })
+      );
       setOpen(true);
-      window.location.replace('/admin/home');
+      setTimeout(() => {
+        window.location.replace('/');
+      }, 1000);
     }
     if (isLogged && currentUser) {
       localStorage.setItem('user', currentUser?.token);
       localStorage.setItem('username', currentUser?.name);
+      setTimeout(() => {
+        window.location.replace('/');
+      }, 1000);
     }
-    if (currentUser) {
-      window.location.replace('/admin/home');
+    if (isRegister && currentUser) {
+      localStorage.setItem('user', currentUser?.token);
+      localStorage.setItem('username', currentUser?.name);
+      setTimeout(() => {
+        window.location.replace('/');
+      }, 1000);
     }
-  }, [dispatch, isLogged, currentUser]);
+  }, [dispatch, isLogged, currentUser, isRegister]);
 
   return (
     <div className={classes.root}>
