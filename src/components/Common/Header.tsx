@@ -109,7 +109,7 @@ export function Header({ initialValues, onSubmit }: LoginFormProps) {
     dispatch(authActions.logout());
     localStorage.removeItem('user');
     localStorage.removeItem('username');
-    window.location.replace('/');
+    window.location.replace('/share-youtube-reactjs');
   };
 
   const handleShare = () => {
@@ -127,21 +127,21 @@ export function Header({ initialValues, onSubmit }: LoginFormProps) {
       );
       setOpen(true);
       setTimeout(() => {
-        window.location.replace('/');
+        window.location.replace('/share-youtube-reactjs');
       }, 1000);
     }
     if (isLogged && currentUser) {
       localStorage.setItem('user', currentUser?.token);
       localStorage.setItem('username', currentUser?.name);
       setTimeout(() => {
-        window.location.replace('/');
+        window.location.replace('/share-youtube-reactjs');
       }, 1000);
     }
     if (isRegister && currentUser) {
       localStorage.setItem('user', currentUser?.token);
       localStorage.setItem('username', currentUser?.name);
       setTimeout(() => {
-        window.location.replace('/');
+        window.location.replace('/share-youtube-reactjs');
       }, 1000);
     }
   }, [dispatch, isLogged, currentUser, isRegister]);

@@ -3,6 +3,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import { history } from 'utils';
 import App from './App';
 import { store } from './app/store';
@@ -14,7 +15,9 @@ ReactDOM.render(
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <CssBaseline />
-        <App />
+        <BrowserRouter basename="/share-youtube-reactjs">
+          <App />
+        </BrowserRouter>
       </ConnectedRouter>
     </Provider>
   </React.StrictMode>,
